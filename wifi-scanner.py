@@ -1,6 +1,5 @@
 #!/usr/bin/python
-
-from scapy.all import *
+import scapy.all
 import sys
 import signal
 import os
