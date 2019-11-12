@@ -20,8 +20,8 @@ def signal_exit(signal, frame):
 def usage():
 	if len(sys.argv) < 3:
 		print 
-		print "Usage:"
-		print "\twifi-scanner.py -i <interface>"
+		print ("Usage:")
+		print ("\twifi-scanner.py -i <interface>")
 		print
 		sys.exit(1)
 
@@ -31,7 +31,7 @@ def sniffpackets(packet):
 		DSTMAC = packet[0].addr1
 		BSSID = packet[0].addr3
 	except:
-		print "Cannot read MAC address"
+		print ("Cannot read MAC address")
 		print str(packet).encode("hex")
 		sys.exc_clear()
 
@@ -91,7 +91,7 @@ def setup_monitor (iface):
 
 def check_root():
 	if not os.geteuid() == 0:
-		print "Run as root."
+		print ("Run as root.")
 		exit(1)
 
 if __name__ == "__main__":
